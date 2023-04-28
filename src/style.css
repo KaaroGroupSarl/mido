@@ -1,0 +1,674 @@
+ :root {
+  --primary-color: #0055a4;
+  --secondary-color: #ffffff;
+  --intermediare-color: #fec949;
+  --accent-color: #ef4135;
+  --text-color: #333333;
+  --nav-hover: #0374dd;
+  --intermediare-hover: #d0b312;
+  --back-color: #f1f1f2
+}
+
+/*----------*/ /*----------*/
+/*----------*/ /*----------*/
+
+/*----- HEADER & FOOTER -----*/
+/* Navigation */
+header {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+}
+
+.logo:hover {
+  background-color: var(--primary-color);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+nav {
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--secondary-color);
+}
+
+nav a {
+  color: var(--secondary-color);
+  font-weight: bold;
+  padding: 0 1rem;
+}
+
+nav a:hover {
+  backgroundcolor: var(--nav-hover);
+  color: var(--intermediare-color);
+}
+
+
+/* Pied de page */
+footer {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 1rem;
+  text-align: center;
+}
+ 
+footer nav {
+  margin-bottom: 1rem;
+}
+
+footer nav a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+/*----------*/ /*----------*/
+/*----------*/ /*----------*/
+
+/*----- GÉNÉRAL -----*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  backgroundcolor: var(--back-color);
+  color: var(--text-color);
+  margin-top: 100px;
+  margin-bottom:100px;
+}
+
+main {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.cadre {
+  border: 1px solid var(--primary-color);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+.page_titre {
+  color: var(--primary-color);
+  text-align: center;
+  margin-top: 20px;
+  font-size: 36px;
+}
+
+.annexe_titre {
+  color: var(--primary-color);
+  text-align: center;
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.perso {
+ font-weight: bold;
+ color: var(--primary-color);
+}
+
+.center {
+  display: block;
+  margin: 0 auto;
+}
+
+.right {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+#inline {
+display: flex ;
+padding: 0 10px;
+
+}
+
+#inline p {
+  padding-right: 100px;
+}
+
+.social-link {
+  display: inline;
+  text-align: right ;
+  width: 40%;
+  margin-right: 10px;
+}
+
+/*----------*/ /*----------*/
+/*----------*/ /*----------*/
+
+/*----- FORMULAIRES -----*/
+form {
+    display: block;
+}
+
+label {
+    margin-top: 10px;
+}
+
+[type="text"],
+[type="email"],
+[type="tel"],
+[type="date"],
+[type="number"],
+[type="month"],
+[type="search"],
+textarea {
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  width: 30%;
+  margin: auto 10px;
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
+    color: red;
+}
+
+input[type="submit"] {
+    background-color: var(--primary-color);
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--nav-hover);
+}
+
+legend {
+ color: var(--primary-color);
+ font-size: 1.5rem;
+ text-align: center;
+}
+
+#red-button {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#red-button:hover {
+  background-color: #c50410;
+}
+
+/* Signalement*/
+#declarant,
+#conct-dir {
+  text-align: center;
+}
+
+#declarant input[type="radio"],
+#info-sup input[type="radio"]{
+  margin:0 10px;
+}
+
+#infos,
+#objet,
+#benevole {
+  color: var(--text-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin: auto 10px;
+  width: 30%;
+}
+
+#motif,
+#field-titre,
+#rgpd,
+#message {
+  margin: auto 10px;
+}
+
+#motif label,
+#field-titre {
+  font-weight: bold;
+  font-size:1rem;
+}
+
+#motif p {
+  color: var(--accent-color);
+}
+
+#spec-put,
+#objet,
+#message,
+#benevole,
+textarea {
+  width: 90%;
+}
+
+/* Signalement range */
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  background: #ddd;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.slider-details .detail {
+  font-size: 12px;
+}
+
+
+/*----------*/ /*----------*/
+/*----------*/ /*----------*/
+
+/*----- INDEX -----*/
+/* En-tête */
+#hero {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  padding: 3rem;
+  text-align: center;
+}
+
+#hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+
+/* Section Fonctionnalités */
+#features {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  padding: 3rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.feature {
+  width: 30%;
+  text-align: center;
+}
+
+.feature h3, 
+.index-text h3 {
+  margin-top: 0;
+}
+
+.feature p,
+.index-text p {
+  font-size: 1.2rem;
+  margin-bottm: 2rem;
+}
+
+/* Section Clarification */
+#clarification h3 {
+  color : var(--accent-color);
+  text-align: center;
+}
+
+#clarification{
+  text-align: justify;
+}
+
+.conclusion {
+  color: var(--accent-color);
+  font-style: italic;
+  text-align: center;
+}
+
+
+/* Section Newletter */
+#newsletter form {
+  display: inline-block;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/*----------*/ /*----------*/
+/*----------*/ /*----------*/
+
+/*------ SIGNALEMENT -------*/
+/* ..Vide.. */
+
+/*----------*/ /*----------*/
+/*----------*/ /*----------*/
+
+/*----- FORUM -----*/
+/* --- Styles pour la section publication --- */
+.forum_page h1 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-top: 20px;
+  font-size: 36px;
+}
+
+.publication form {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.publication label {
+    font-weight: bold;
+}
+
+.publication input[type="text"],
+.publication textarea,
+.publication input[type="file"] {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.publication button[type="submit"] {
+    background-color: var(--primary-color);
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.publication button[type="submit"]:hover {
+    background-color: var(--nav-hover);
+}
+
+/* --- Styles pour la section publications --- */
+.publications {
+    margin-top: 30px;
+}
+
+.publications h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.publications ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.publications li {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.publications h3 {
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.publications p {
+    margin-top: 10px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn-aime,
+.btn-commente,
+.btn-partage {
+    background-color: var(--primary-color);
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.btn-aime:hover,
+.btn-commente:hover,
+.btn-partage:hover {
+    background-color: var(--nav-hover);
+}
+
+.commentaires {
+    margin-top: 20px;
+}
+
+.commentaires h4 {
+    font-size: 18px;
+    margin-top: 0;
+}
+
+.liste-commentaires {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.liste-commentaires li {
+    margin-top: 10px;
+}
+
+.liste-commentaires p {
+    margin-bottom: 10px;
+}
+
+.liste-commentaires .actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.liste-commentaires .actions button {
+    background-color: var(--intermediare-color);
+    border: none;
+    color: #000;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.liste-commentaires .actions button:hover {
+    background-color: var(--intermediare-color);
+}
+
+.liste-commentaires form {
+    margin-top: 20px;
+}
+
+.liste-commentaires textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+/*----------*/ /*----------*/
+/*----------*/ /*----------*/
+
+/*----- DOCUMENTATION -----*/
+/* Style général */
+.document_pge {
+  max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.document_page h1 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-top: 20px;
+  font-size: 36px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav li:last-child {
+  margin-right: 0;
+}
+
+/* Style de la section "Documents" */
+
+.documents {
+  margin-bottom: 20px;
+}
+
+.documents h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.documents ul {
+  list-style: none;
+}
+
+.documents li {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.documents h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.documents p {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.documents .actions {
+  margin-top: 10px;
+}
+
+.documents button {
+  font-size: 20px;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.btn-telecharger {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.btn-telecharger:hover {
+  background-color: var(--nav-hover);
+}
+
+.btn-note {
+  background-color: var(--intermediare-color);
+  color: #000;
+}
+
+.btn-note:hover {
+  background-color: var(--intermediare-color);
+}
+
+/*----------*/ /*----------*/
+/*----------*/ /*----------*/
+
+/*----- FAQ -----*/
+dl {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+}
+
+dt {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+dt:hover {
+    color: var(--nav-hover);
+}
+
+dd {
+  margin-left: 0;
+  padding-left: 30px;
+  margin-bottom: 20px;
+}
+
+.titre {
+  margin: 0;
+}
+
+
+/*----------*/ /*----------*/
+/*----------*/ /*----------*/
+
+/*----- PRIVACY -----*/
+.privacy h3:hover{
+    color: var(--nav-hover);
+}
