@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>mìɖɔ - Documentation</title>
+  <link rel="shortcut icon" href="images/logo.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html"><img src="images/logo.png" width="200px" class="logo">
+
+      <div>
+        <a href="signaler.html">Signaler un harcèlement</a>
+        <a href="forum.html">Forum</a>
+        <a href="document.html">Documentations</a>
+      </div>
+  </nav>
+</header>
+
+<main>
+  <h1 class="page_titre">Documentation</h1>
+  <br>
+
+  <section>
+    <form action="search.php" method="get" class="right">
+      <input type="search" id="rechercher" name="q" placeholder="Rechercher un document">
+      <input type="submit" value="Rechercher">
+    </form>
+  </section>
+
+  <section class="documents">
+    <h2>Documents disponibles</h2>
+    <ul id="liste-documents">
+
+      <?php
+        // Connexion à la base de données
+        $dbhost = 'localhost';
+        $dbname = 'ma_base_de_donnees';
+        $dbuser = 'mon_utilisateur';
+        $dbpass = 'mon_mot_de_passe';
+        $db = new PDO("mysql:host=$dbhost;dbname=$dbname;charset=utf8", $dbuser, $dbpass);
+
+        // Récupération des documents
+        $stmt = $db->prepare('SELECT * FROM documents');
+        $stmt->execute();
+        $documents = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // Affichage des documents
+        foreach ($documents as $document) {
+          echo '<li>';
+          echo '<h3>' . $document['titre'] . '</h3>';
+          echo '<p>Auteur : ' . $document['auteur'] . '</p>';
+          echo '<p>Type : ' . $document['type'] . '</p>';
+          echo '<p>Note : ' . $document['note'] . ' étoiles</p>';
+          echo '<p>Téléchargements : ' . $document['telechargements'] . '</p>';
+          echo '<div class="actions">';
+          echo '<a href="' . $document['url'] . '" class="btn-telecharger">Télécharger</a>';
+          echo '<a href="noter.php?id=' . $document['id'] . '" class="btn-note">Noter</a>';
+          echo '</div>';
+          echo '</li>';
+        }
+      ?>
+
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <nav>
+    <a href="about.html">À propos</a>
+    <a href="contact.html">Contacts</a>
+    <a href="soutien.html">Nous soutenir</a>
+    <a href="FAQ.html">FAQ</a>
+    <a href="legal.html">Mentions légales</a>
+    <

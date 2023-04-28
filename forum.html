@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>mìɖɔ - Forum</title>
+  <link rel="shortcut icon" href="images/logo.png" type="image/png">
+  <link rel="stylesheet" href="src/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html"><img src="images/logo.png" width="200px" class="logo"></a>
+
+      <div>
+        <a href="signaler.html">Signaler un harcèlement</a>
+        <a href="forum.html">Forum</a>
+        <a href="document.html">Documentations</a>
+      </div>
+  </nav>
+</header>
+	
+	<main>
+	  <h1 class="page_titre">Forum</h1>
+		
+		<section class="publication">
+			<h2>Publier</h2>
+			  <form action="src/forum.php" method="GET">
+				<input type="text" id="titre" name="titre" placeholder="Nommez votre publication" required>
+			
+				<textarea id="contenu" name="contenu" rows="10" placeholder="Décrivez votre publications" required></textarea>
+				<label for="piece_jointe">Pièce jointe :</label>
+				<input type="file" id="piece_jointe" name="piece_jointe" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+				<button type="submit">Publier</button>
+			</form>
+		</section>
+		
+		<section class="publications">
+			<h2>Publications</h2>
+			<ul id="liste-publications">
+				<li>
+					<h3>Titre de la publication</h3>
+					<p>Contenu de la publication</p>
+					<div class="actions">
+						<button class="btn-aime">J'aime</button>
+						<button class="btn-commente">Commenter</button>
+						<button class="btn-partage">Partager</button>
+					</div>
+					<div class="commentaires">
+						<h4>Commentaires</h4>
+						<ul class="liste-commentaires">
+							<li>
+								<p>Nom de l'utilisateur :</p>
+								<p>Contenu du commentaire</p>
+								<div class="actions">
+									<button class="btn-aime">J'aime</button>
+								</div>
+							</li>
+						</ul>
+						<form action="src/forum.php" method="GET">
+							
+							<textarea id="commentaire" name="commentaire" rows="3" placeholder="Votre commentaire" required></textarea>
+							<button type="submit">Commenter</button>
+						</form>
+					</div>
+				</li>
+			</ul>
+		</section>
+	</main>
+
+<footer>
+  <nav>
+    <a href="about.html">À propos</a>
+    <a href="contact.html">Contacts</a>
+    <a href="soutien.html">Nous soutenir</a>
+    <a href="FAQ.html">FAQ</a>
+    <a href="legal.html">Mentions légales</a>
+    <a href="privacy.html">Politique de confidentialité</a>
+  </nav>
+
+  <div id="inline">
+    <p>© 2023 Plateforme de signalement des harcèlements. Tous droits réservés.</p>
+
+    <div class="social-link">
+      <a href="https://linkedin.com/company/ProGestionSoft"><img src="images/footer_linkedin.png" width="5%">
+        <a href="https://facebook.com/ProGestionSoft"><img src="images/footer_facebook.png" width="5%">
+          <a href="https://youtube.com/@ProGestionSoft"><img src="images/footer_youtube.png" width="5%">
+    </div>
+  </div>
+
+  </div>
+</footer>
+
+	<script src="src/forum.js"></script>
+</body>
+</html>

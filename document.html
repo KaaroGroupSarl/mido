@@ -1,0 +1,99 @@
+	<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>mìɖɔ - Documentation</title>
+  <link rel="shortcut icon" href="images/logo.png" type="image/png">
+  <link rel="stylesheet" href="src/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html"><img src="images/logo.png" width="200px" class="logo"></a>
+
+      <div>
+        <a href="signaler.html">Signaler un harcèlement</a>
+        <a href="forum.html">Forum</a>
+        <a href="document.html">Documentations</a>
+      </div>
+  </nav>
+</header>
+	
+	<main>
+	  <h1 class="page_titre">Documentation</h1>
+	<br>
+	
+		<section>
+			<form action="src/document.php" method="post" class="right">
+				<input type="search" id="rechercher" name="rechercher" placeholder="Rechercher un document">
+				<input type="submit" value="Rechercher">
+			</form>
+		</section>
+		
+		<section class="documents">
+			<h2>Documents disponibles</h2>
+			<ul id="liste-documents">
+				<li>
+					<h3>Titre du document</h3>
+					<p>Auteur : Nom de l'auteur</p>
+					<p>Type : Type de document (livre, article, thèse, etc.)</p>
+					<p>Note : 4 étoiles</p>
+					<p>Téléchargements : 10</p>
+					<div class="actions">
+							<button class="btn-telecharger">Télécharger</button>
+							<button class="btn-note">Noter</button>
+						</div>
+				</li>
+				<li>
+					<h3>Titre du document</h3>
+					<p>Auteur : Nom de l'auteur</p>
+					<p>Type : Type de document (livre, article, thèse, etc.)</p>
+					<p>Note : 3 étoiles</p>
+					<p>Téléchargements : 5</p>
+					<div class="actions">
+							<button class="btn-telecharger">Télécharger</button>
+							<button class="btn-note">Noter</button>
+						</div>
+				</li>
+				<li>
+					<h3>Titre du document</h3>
+					<p>Auteur : Nom de l'auteur</p>
+					<p>Type : Type de document (livre, article, thèse, etc.)</p>
+					<p>Note : 5 étoiles</p>
+					<p>Téléchargements : 8</p>
+					<div class="actions">
+							<button class="btn-telecharger">Télécharger</button>
+							<button class="btn-note">Noter</button>
+						</div>
+				</li>
+			</ul>
+		</section>
+	</main>
+
+<footer>
+  <nav>
+    <a href="about.html">À propos</a>
+    <a href="contact.html">Contacts</a>
+    <a href="soutien.html">Nous soutenir</a>
+    <a href="FAQ.html">FAQ</a>
+    <a href="legal.html">Mentions légales</a>
+    <a href="privacy.html">Politique de confidentialité</a>
+  </nav>
+
+  <div id="inline">
+    <p>© 2023 Plateforme de signalement des harcèlements. Tous droits réservés.</p>
+
+    <div class="social-link">
+      <a href="https://linkedin.com/company/ProGestionSoft"><img src="images/footer_linkedin.png" width="5%">
+        <a href="https://facebook.com/ProGestionSoft"><img src="images/footer_facebook.png" width="5%">
+          <a href="https://youtube.com/@ProGestionSoft"><img src="images/footer_youtube.png" width="5%">
+    </div>
+  </div>
+
+  </div>
+</footer>
+
+	<script src="src/script.js"></script>
+</body>
+</html>
