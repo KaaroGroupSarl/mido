@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>mìɖɔ - Signaler un harcèlement</title>
+  <link rel="shortcut icon" href="images/logo.png" type="image/png">
+  <link rel="stylesheet" href="src/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html"><img src="images/logo.png" width="200px" class="logo"></a>
+
+      <div>
+        <a href="signaler.html">Signaler un harcèlement</a>
+        <a href="forum.html">Forum</a>
+        <a href="document.html">Documentations</a>
+      </div>
+  </nav>
+</header>
+    
+ <main class="container">
+        <h1 class="page_titre">Signaler un harcèlement</h1>
+      
+  <form action="src/signaler.php" method="post">
+  <fieldset id="declarant">
+    <legend>Déclarant</legend>
+  <input type="radio" name="signaler" value="temoin" onchange="afficherTemoins()" required>Un témoin
+  <input type="radio" name="signaler" value="victime" required>Une victime<br><br>
+
+  <div id="infosTemoins" style="display:none">
+    <input type="text" name="prenom" placeholder="Prénom(s) témoin">
+    <input type="text" name="nom" placeholder="Noms témoin"><br><br>
+    
+    <input type="tel" name="telephone" placeholder="Téléphone témoin">
+    <input type="email" name="mail" placeholder="Adresse email témoin" required><br><br>
+  </div>
+</fieldset>
+<br>
+
+<fieldset>
+  <legend>Informations d'enquête</legend>
+  <label for="infos"></label>
+<select id="infos" name="type" required>
+  <option value="" disabled selected>Type de l'harcèlement</option>
+  <option value="sexuel">Harcèlement sexuel</option>
+  <option value="moral">Harcèlement moral</option>
+</select>
+  
+
+  <input type="date" name="date_harcelement" required>
+
+  <input type="text" name="lieu" placeholder="Lieu de l'harcèlement" required><br><br>
+  
+<div id="motif">
+  <label>Motif :</label><br>
+  <p>Harcèlement sexuel</p>
+  <input type="checkbox" name="motifs[]" value="Propositions">Propositions sexuelles non désirées<br>
+  <input type="checkbox" name="motifs[]" value="Touchers">Touchers non désirés<br>
+  <input type="checkbox" name="motifs[]" value="Faveurs">Propositions de faveurs sexuelles en échange de faveurs professionnelles<br>
+  <input type="checkbox" name="motifs[]" value="Commentaires">Commentaires sur l'apparence physique ou sexuelle<br>
+  <input type="checkbox" name="motifs[]" value="Termes">Utilisation de termes offensants ou obscènes<br>
+  <input type="checkbox" name="motifs[]" value="Exhibitionnisme">Exhibitionnisme<br><br>
+  
+  <p>Harcèlement moral</p>
+  <input type="checkbox" name="motifs[]" value="Insultes">Insultes et humiliations<br>
+  <input type="checkbox" name="motifs[]" value="Ecart">Mise à l'écart<br>
+  <input type="checkbox" name="motifs[]" value="Surcharge">Surcharge de travail ou sous-évaluation du travail fourni<br>
+  <input type="checkbox" name="motifs[]" value="Pressions">Pressions psychologiques<br>
+  <input type="checkbox" name="motifs[]" value="Diffamation">Diffamation<br>
+  <input type="checkbox" name="motifs[]" value="Intimidation">Intimidation ou menaces<br>
+  <input type="checkbox" name="motifs[]" value="Chantage">Chantage<br><br>
+  
+  <p>Autres</p>
+  <input type="checkbox" name="motifs[]" value="harcèlement en ligne">Harcèlement en ligne<br>
+  <input type="checkbox" name="motifs[]" value="autre" onchange="afficherMotifAutre()">Autre (A préciser)<br><br>
+
+  <div id="motifAutre" style="display:none">
+    <label>Autre motif:</label><br>
+    <input type="text" name="motif_autre" id="spec-put" required><br><br>
+  </div>
+</div>
+  <br>
+  
+  <label for="range" id="field-titre">Gravité de l'harcèlement :</label>
+<input type="range" min="1" max="5" value="1" class="slider" id="range">
+<div class="slider-details">
+  <span class="detail">Faible</span>
+  <span class="detail">Grave</span>
+  <span class="detail">Urgent</span>
+  <span class="detail">Très grave</span>
+  <span class="detail">Critique</span>
+</div>
+<br>
+
+ <label id="field-titre">Description :</label><br>
+  <textarea name="description" rows="5" maxlength="10000" placeholder="Decrivez les faits en 10000 caractères au plus." id="spec-put" required></textarea><br><br>
+ 
+</div>
+  </fieldset>
+  <br>
+
+<fieldset id="info-sup">
+    <legend>Informations complémentaires</legend>
+  <label id="field-titre">Voulez-vous partager vos coordonnées ?</label><br>
+  <input type="radio" name="coordonnees" value="oui" onchange="afficherCoordonnees()" required>Oui
+  <input type="radio" name="coordonnees" value="non" required>Non<br>
+
+  <div id="coordonnees" style="display:none">
+    <input type="text" name="prenom-nom_victime" placeholder="Prénom(s) et Nom victime" required>
+  
+    <input type="tel" name="telephone_victime" placeholder="Téléphone victime" required>
+    
+  <input type="email" name="email_victime" placeholder="Email victime" required>
+  </div>
+ <br>
+  
+<label id="field-titre">Preuve :</label><br>
+<input type="file" name="preuve" required>
+ </fieldset>
+ <br>
+ 
+ <fieldset>
+    <legend>Consentement et validation</legend>
+<input type="checkbox" name="confirme" value="oui" id="rgpd" required>Je confirme l'exactitude des renseignements mentionnés ci-dessus.<br><br>
+
+<input type="checkbox" name="politique" value="accepte" id="rgpd" required>J'accepte la politique de confidentialité de la plateforme.
+ </fieldset>
+ <br>
+
+  <input type="submit" value="Signaler l'harcèlement" id="red-button">
+</form>
+    </main>
+
+<footer>
+    <nav>
+      <a href="about.html">À propos</a>
+      <a href="contact.html">Contacts</a>
+      <a href="soutien.html">Nous soutenir</a>
+      <a href="FAQ.html">FAQ</a>
+      <a href="legal.html">Mentions légales</a>
+      <a href="privacy.html">Politique de confidentialité</a>
+    </nav>
+ 
+    <div id="inline">
+      <p>© 2023 Plateforme de signalement des harcèlements. Tous droits réservés.</p>
+ 
+      <div class="social-link">
+        <a href="https://linkedin.com/company/ProGestionSoft"><img src="images/footer_linkedin.png" width="5%">
+          <a href="https://facebook.com/ProGestionSoft"><img src="images/footer_facebook.png" width="5%">
+            <a href="https://youtube.com/@ProGestionSoft"><img src="images/footer_youtube.png" width="5%">
+      </div>
+    </div>
+ 
+    </div>
+</footer>
+    
+    <script src="src/script.js"></script>
+</body>
+</html>
